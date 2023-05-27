@@ -98,6 +98,8 @@ function set_config_from_hpanel(){
         setenv REALITY_PRIVATE_KEY ``hconfigs[reality_private_key]``
         setenv REALITY_SHORT_IDS ``hconfigs[reality_short_ids]``
 
+        
+
         setenv SERVER_IP `curl --connect-timeout 1 -s https://v4.ident.me/`
         setenv SERVER_IPv6 `curl  --connect-timeout 1 -s https://v6.ident.me/`
 
@@ -109,27 +111,48 @@ function set_config_from_hpanel(){
                 var="__tick_data_${group}_${index}_${member}";
                 echo ${!var}
         }
-
+        REALITY_MULTI=
+        REALITY_MULTI_GRPC=
+        FORCE_XRAY_DOMAINS_MULTI=
         MAIN_DOMAIN=
         for i in $(seq 0 ``domains.length()``); do
                 domain=$(get domains $i domain)
+                servernames=$(get domains $i servernames)
                 mode=$(get domains $i mode)
-                if [ "$mode"  == "direct" ] || [ "$mode"  == "cdn" ] || [ "$mode"  == "relay" ] || [ "$mode"  == "auto_cdn_ip" ];then
+                grpc=$(get domains $i grpc)
+                case $mode in
+                direct|cdn|worker|relay|auto_cdn_ip|old_xtls_direct|sub_link_only)
                         MAIN_DOMAIN="$domain;$MAIN_DOMAIN"
-                fi
-                if [ "$mode"  = "ss_faketls" ];then
+                        if [ "$mode" == "old_xtls_direct" ];then
+                                FORCE_XRAY_DOMAINS_MULTI="$domain:${servernames:-$domain};$FORCE_XRAY_DOMAINS_MULTI"
+                        fi 
+                        ;;
+                reality)
+                        if [ "$grpc" == "true" ];then
+                                REALITY_MULTI_GRPC="$domain:${servernames:-$domain};$REALITY_MULTI_GRPC"
+                        else 
+                                REALITY_MULTI="$domain:${servernames:-$domain};$REALITY_MULTI"
+                        fi
+                        ;;
+                ss_faketls)
                         setenv SS_FAKE_TLS_DOMAIN $domain
-                fi
-                if [ "$mode"  = "telegram_faketls" ];then
-                        setenv TELEGRAM_FAKE_TLS_DOMAIN $domain
-                fi
-
-                if [ "$mode"  = "fake_cdn" ];then
+                        ;;
+                telegram_faketls)
+                        setenv TELEGRAM_FAKE_TLS_DOMAIN $domain                        
+                        ;;
+                fake_cdn)
                         setenv FAKE_CDN_DOMAIN $domain
-                fi
-        done
+                        ;;
+                *)
+                        # Code block to execute for other cases (optional)
+                        ;;
+                esac
 
+        done
+        setenv REALITY_MULTI $REALITY_MULTI
+        setenv REALITY_MULTI_GRPC $REALITY_MULTI_GRPC
         setenv MAIN_DOMAIN $MAIN_DOMAIN
+        setenv FORCE_XRAY_DOMAINS_MULTI $FORCE_XRAY_DOMAINS_MULTI
 
         USER_SECRET=
         for i in $(seq 0 ``users.length()``); do
@@ -197,11 +220,12 @@ function do_for_all() {
                 # runsh uninstall.sh deprecated/monitoring
                 # runsh $1.sh other/netdata false $ENABLE_NETDATA
                 # runsh $1.sh deprecated/trojan-go  $ENABLE_TROJAN_GO
-                WARP_ENABLE=$([ "$WARP_MODE" != 'disable' ] || echo "false")
-                runsh $1.sh other/warp  $WARP_ENABLE
+                #WARP_ENABLE=$([ "$WARP_MODE" != 'disable' ] || echo "false")
+                runsh $1.sh other/warp  
+                runsh $1.sh xray
         fi
-
-        runsh $1.sh xray
+        runsh $1.sh singbox
+        
         
 }
 
@@ -276,7 +300,7 @@ function main(){
                 fi
         fi
 
-        for s in hiddify-xray hiddify-nginx haproxy;do
+        for s in hiddify-xray hiddify-singbox hiddify-nginx hiddify-haproxy;do
 	        s=${s##*/}
 	        s=${s%%.*}
 	        if [[ "$(systemctl is-active $s)" != "active" ]];then

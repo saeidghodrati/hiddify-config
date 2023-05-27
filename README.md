@@ -4,7 +4,7 @@
 
 
 
-[**![Lang_farsi](https://user-images.githubusercontent.com/125398461/234186932-52f1fa82-52c6-417f-8b37-08fe9250a55f.png) &nbsp;فارسی**](https://github.com/hiddify/hiddify-config/blob/main/README_fa.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**![Lang_Chinese](https://user-images.githubusercontent.com/125398461/236453142-16f3a81e-8f40-403d-a452-34c4c9ed8f64.png) 中国人**](https://github.com/hiddify/hiddify-config/blob/main/README_cn.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![](https://img.shields.io/badge/%20Wiki-Page-808080?style=flat-square)](https://github.com/hiddify/hiddify-config/wiki)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![](https://img.shields.io/badge/FAQ-Here-512DA8?style=flat-square&logo=Favro)](https://github.com/hiddify/hiddify-config/discussions/categories/q-a-%D8%B3%D9%88%D8%A7%D9%84%D8%A7%D8%AA-%D8%B1%D8%A7%DB%8C%D8%AC)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![](https://img.shields.io/badge/Report-Bugs-F67909?style=flat-square&logo=Open-Bug-Bounty)](https://github.com/hiddify/hiddify-config/issues)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[**![Lang_farsi](https://user-images.githubusercontent.com/125398461/234186932-52f1fa82-52c6-417f-8b37-08fe9250a55f.png) &nbsp;فارسی**](README_fa.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**![Lang_Chinese](https://user-images.githubusercontent.com/125398461/236453142-16f3a81e-8f40-403d-a452-34c4c9ed8f64.png) 简体中文**](README_cn.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![](https://img.shields.io/badge/%20Wiki-Page-808080?style=flat-square)](https://github.com/hiddify/hiddify-config/wiki)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![](https://img.shields.io/badge/FAQ-Here-512DA8?style=flat-square&logo=Favro)](https://github.com/hiddify/hiddify-config/discussions/categories/q-a-%D8%B3%D9%88%D8%A7%D9%84%D8%A7%D8%AA-%D8%B1%D8%A7%DB%8C%D8%AC)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![](https://img.shields.io/badge/Report-Bugs-F67909?style=flat-square&logo=Open-Bug-Bounty)](https://github.com/hiddify/hiddify-config/issues)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 <br>
 <div align=center markdown="1">
@@ -45,7 +45,7 @@
 Hiddify is a powerful and professional anti-censorship toolbox, which is a multi-user panel with an effortless installation and <b>supporting more than 20 protocols</b> including <b>Reality</b> and <b>Telegram proxy</b> to circumvent filtering.  It's optimized for censorship circumvention in <b>China</b>, <b>Russia</b> and <b>Iran</b> and Recommended by <a href="https://github.com/XTLS/Xray-core#installation" target="_blank"><b>Xray</b></a>. It's a great replacement of X-UI panel.
 
 
-![English new 2](https://user-images.githubusercontent.com/125398461/234265624-36ee0a18-d4e8-4803-a9ad-331a7c5998e3.png)
+![English Demo](https://user-images.githubusercontent.com/125398461/234265624-36ee0a18-d4e8-4803-a9ad-331a7c5998e3.png)
 
 
 
@@ -73,10 +73,11 @@ Hiddify is a powerful and professional anti-censorship toolbox, which is a multi
 
 ***
 ## Why Hiddify?
-Hiddify is a mixture of Hidden and Simplify. A feature-full panel with a wide range of capabilities that helps you enjoy surfing free internet with ease and peace Of mind. 
+Hiddify is a mixture of Hidden and Simplify. It is a panel with a wide range of features and capabilities that helps you enjoy hassle-free and secure internet browsing. Serving as a user-friendly VPN solution, Hiddify ensures that you can access the free internet with ease and peace of mind. 
 
 ### Attractive features
 - **Quick installation**
+- Dual core **Xray** and **SingBox**
 - **Smart proxy** (Hiddify and Clash client)
 - **Automatic update**
 - **Automatic backup** (every 6 hours)
@@ -85,7 +86,7 @@ Hiddify is a mixture of Hidden and Simplify. A feature-full panel with a wide ra
 - **Auto CDN IP** configuration capability
 - Management of **active configurations**
 - **Multiple admin privileges**
-- **User management**
+- the Only **SingBox** panel with **user management** feature
 - Applying **time and traffic limit** for each user
 - **Dedicated pages for users** to view consumption and configurations
 - Dedicated and **smart configurations**
@@ -94,7 +95,7 @@ Hiddify is a mixture of Hidden and Simplify. A feature-full panel with a wide ra
 - **DNS over HTTPS** (DoH)
 - User management using **Telegram Bot**
 
-And dozens of other features that you will notice after installation.
+And dozens of other features that you will notice upon installation.
 
 <details markdown="1"> <summary><h3>Supported protocols</h3> (click here)</summary> 
 
@@ -118,7 +119,7 @@ And dozens of other features that you will notice after installation.
 
 </details>
 
-<details markdown="1"> <summary><h3>smart proxy for domestic and filtered sites</h3> (click here)</summary>
+<details markdown="1"> <summary><h3>Smart proxy for domestic and filtered sites</h3> (click here)</summary>
  
 You can connect to the internet in 3 modes using Hiddify(Clash) client and Hiddify panel. 
 1. This method only circumvents filtered websites via the proxies.
@@ -171,7 +172,17 @@ When you want to share Telegram proxy or Shadowsocks proxy through other program
 </details>
 
 ## Installation and tutorials
-**Please find related information [here in wiki page](https://github.com/hiddify/hiddify-config/wiki)**
+**Please find related information on our wiki page by clicking on image below.**
+
+<div align="center" width="40%">
+ 
+ [![Tutorials](https://github.com/hiddify/hiddify-config/blob/main/docs/Turorials_en.webp)](https://github.com/hiddify/hiddify-config/wiki)
+ 
+ 
+ <!--
+ <a href="https://github.com/hiddify/hiddify-config/wiki"><img width="40%" src="https://github.com/hiddify/hiddify-config/assets/125398461/77960650-1bd0-4a12-b8d5-2735bec33934" /></a>-->
+
+</div>
 
 ## Donation And Support 
 The easiest way to support us is to click on the star (⭐) at the top of this page.
@@ -184,8 +195,9 @@ We also need financial support for our services. All of our activities are done 
 We need your collaboration in order to develop this project. If you are specialists in these areas, please do not hesitate to contact us.
 
 * Media Production &nbsp;&nbsp;&nbsp;&nbsp;  
-* Python Developing &nbsp;&nbsp;&nbsp;&nbsp; ‌  
-* Kotlin Developing &nbsp;&nbsp;&nbsp;&nbsp; 
+* Python Developing &nbsp;&nbsp;&nbsp;&nbsp; ‌
+* Kotlin Developing  
+* Flutter Developing &nbsp;&nbsp;&nbsp;&nbsp; 
 
 <div align=center>
 

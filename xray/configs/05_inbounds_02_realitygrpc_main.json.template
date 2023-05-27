@@ -1,0 +1,43 @@
+{
+	"inbounds": [
+		{
+			"tag":"realityin",
+			// "port": 400, // This is TLS entrypoint. This entrypoint does the SSL Termination then routes the request based on the Path or ALPN type.
+			"listen": "@@realityingrpc",
+			"protocol": "vless",
+			"settings": {
+			  "decryption": "none",
+			  "clients": [
+				{"id": "defaultuserguidsecret", "email": "defaultuserguidsecret@hiddify.com","flow": ""}
+			  ],
+			  "fallbacks": []
+			},
+			"streamSettings": {
+			  "network": "grpc",
+			  "grpcSettings": {
+				"serviceName": "PATH_VLESSPATH_GRPC"
+			  },
+			  "tcpSettings": {
+				"acceptProxyProtocol": true 
+			  },
+			  "security": "reality", 
+			  "realitySettings": {
+                    "show": false, 
+                    "dest": "REALITY_FALLBACK_DOMAIN:443", 
+                    "xver": 0,
+                    "serverNames": [ 
+                        REALITY_SERVER_NAMES
+                    ],
+                    "privateKey": "REALITY_PRIVATE_KEY", 
+                    "shortIds": [ 
+                        "", REALITY_SHORT_IDS 
+                    ]
+              }
+			},
+			"sniffing": {
+			  "enabled": true,
+			  "destOverride": ["http","tls","quic"]
+			}
+		  }
+	]
+}

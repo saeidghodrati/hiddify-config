@@ -5,7 +5,18 @@
       "protocol": "freedom",
       "settings": {}
     },
-    //hiddify_warp
+    {
+      "tag":"WARP",
+      "protocol":"socks",
+      "settings": {
+        "servers": [
+            {
+                "address": "127.0.0.1",
+                "port": 3000
+            }
+        ]
+      }
+    },
     {
       "protocol": "blackhole",
       "tag": "blackhole"
